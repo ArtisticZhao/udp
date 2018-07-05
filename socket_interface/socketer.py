@@ -10,3 +10,8 @@ class socket_sender(object):
 
     def send_data(self, data):
         self.sock.sendto(data, (self.addr, self.port))
+
+
+if __name__ == '__main__':
+    ss = socket_sender('localhost', 20000)
+    ss.send_data('hello')

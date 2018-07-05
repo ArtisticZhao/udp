@@ -19,10 +19,14 @@ class upper_socket_server(threading.Thread):
     def run(self):
         self.server.serve_forever()
 
+    def go(self):
+        self.setDaemon(True)
+        self.start()
+
 
 if __name__ == '__main__':
     up_ser = upper_socket_server()
-    up_ser.start()
+    up_ser.go()
     while True:
         print("hello")
         time.sleep(1)
